@@ -6,7 +6,7 @@
 //  Copyright © 2016 Dungttm. All rights reserved.
 //
 import UIKit
-import SDWebImage
+import Kingfisher
 
 /// view contains avatars of group.
 class MDGroupAvatarView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -101,7 +101,7 @@ class MDGroupAvatarView: UIView, UICollectionViewDataSource, UICollectionViewDel
             if indexPath.row < data.count {
                 let imageData = data[indexPath.row]
                 if let imageUrl = imageData as? URL {
-                    imageView.sd_setImage(with: imageUrl, placeholderImage: placeHolderImage)
+                    imageView.kf.setImage(with: imageUrl, placeholder: placeHolderImage)
                 } else if let image = imageData as? UIImage {
                     imageView.image = image
                 } else {
